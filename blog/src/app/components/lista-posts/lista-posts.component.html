@@ -1,12 +1,42 @@
+<section>
+    <div class="container p-5">
+
+        <div class="banner d-flex justify-content-between align-items-center">
+            <p class="p-3 m-3">Myyyyyyyyyy Blogggggggggg ⭐</p>
+            <div class="time pt-5">{{timer | date:'dd-MM-yyyy HH:mm:ss'}}</div>
+        </div>
 
 
-<div class="posts">
-    <div class="post" *ngFor="let post of arrPosts">
-        <h4>{{post.titulo}}</h4>
-        <p>{{post.texto}}</p>
-        <p>{{post.autor}}</p>
-        <p>{{post.fecha}}</p>
-        <p>{{post.categoria}}</p>
+
+        <div class="barra d-flex justify-content-between">
+            <div class="seleccion">
+                <select (change)="getContenido($event)">
+                    <option value="todos">Seleccionar por categoria</option>
+                    <option value="{{cate}}" *ngFor="let cate of arrCate">{{cate}}</option>
+                </select>
+            </div>
+
+            <ul>
+                <li [routerLink]="['/new']">
+                    ❤ Ir a publicar un nuevo post
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+        <div class="posts mt-3">
+            <div class="post row p-3 mb-3" *ngFor="let post of arrPosts">
+                <h3 class="col-12">{{post.titulo}}</h3>
+                <p class="col-8">{{post.contenido}}</p>
+                <img [src]="post.imagen" alt="" class="col-4">
+                <p class="col-2">Autor: {{post.autor}}</p>
+                <p class="col-4">Fecha de publicación: {{post.fecha}}</p>
+                <p class="col-4">Categoria: {{post.categoria}}</p>
+            </div>
+
+        </div>
     </div>
-
-</div>
+</section>

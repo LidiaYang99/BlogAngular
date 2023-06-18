@@ -3,7 +3,7 @@
 
         <ul>
             <li [routerLink]="['/posts']">
-             ❤ Ir a lista de posts
+                ❤ Ir a lista de posts
             </li>
         </ul>
 
@@ -77,6 +77,7 @@
                 <div class="col-12 col-md-3">
                     <label class="form-label">Categoria</label>
                     <input type="text" class="form-control" formControlName="categoria">
+
 
                     <p class="error" *ngIf="checkError('categoria','maxlength')">
                         Es mas de 15 caracteres
