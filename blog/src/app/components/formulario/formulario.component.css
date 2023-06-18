@@ -1,0 +1,49 @@
+section {
+    width: 100%;
+    height: 100vh;
+    background: url(/assets/image/bg_new.jpg);
+}
+
+.container {
+    opacity: 0.8;
+    color: aliceblue;
+    font-size: 22px;
+    /* background-color: pink; */
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    height: 40px;
+    line-height: 20px;
+    width: 250px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+ul i {
+    color: aliceblue;
+    width: 20px;
+    height: 20px;
+}
+
+.container textarea {
+    resize: none;
+}
+
+.container .time {
+    text-align: right;
+}
+
+.error {
+    color: hotpink;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid hotpink;
+}
+
+textarea.ng-invalid.ng-touched {
+    border: 2px solid hotpink;
+}

@@ -1,1 +1,100 @@
-<p>formulario works!</p>
+<section class="d-flex p-5">
+    <div class="container p-5">
+
+        <ul>
+            <li [routerLink]="['/posts']">
+             ❤ Ir a lista de posts
+            </li>
+        </ul>
+
+        <div class="time">
+            {{timer | date:'dd-MM-yyyy HH:mm:ss'}}
+        </div>
+
+
+        <form class="form-group" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+            <!-- Titulo -->
+            <div class="row primera-fila">
+                <div class="col-12 col-md-12">
+                    <label class="form-label">Titulo</label>
+                    <input type="text" class="form-control" formControlName="titulo">
+
+                    <!-- Mostrar en tiempo real la longitud del titulo ingresado -->
+                    <p class="num-titulo" *ngIf="formulario.get('titulo')?.value?.length>0"
+                        [class.error]="formulario.get('titulo')?.value?.length > 25">
+                        {{formulario.get('titulo')?.value?.length}} /25
+                    </p>
+
+                </div>
+            </div>
+
+
+
+            <!-- Contenido -->
+            <div class="row segundo-fila mt-2">
+                <div class="col-12 col-md-12">
+                    <label class="form-label">Contenido</label>
+                    <textarea name="" cols="30" rows="10" class="form-control" formControlName="contenido"></textarea>
+
+                    <!-- Mostrar en tiempo real la longitud del contenido ingresado -->
+                    <p class="num-contenido" *ngIf="formulario.get('contenido')?.value?.length>0"
+                        [class.error]="formulario.get('contenido')?.value?.length > 500">
+                        {{formulario.get('contenido')?.value?.length}} /500
+                    </p>
+                </div>
+            </div>
+
+
+
+            <!-- Autor,fecha, imagen, categoria -->
+            <div class="row tercera-fila mb-5 mt-2">
+                <div class="col-12 col-md-3">
+                    <label class="form-label">Autor</label>
+                    <input type="text" class="form-control" formControlName="autor">
+
+                    <p class="error" *ngIf="checkError('autor','maxlength')">
+                        Es mas de 15 caracteres
+                    </p>
+                </div>
+
+
+                <div class="col-12 col-md-3">
+                    <label class="form-label">Fecha</label>
+                    <input type="date" class="form-control" formControlName="fecha" placeholder="dd-mm-yyyy">
+                </div>
+
+
+                <div class="col-12 col-md-3">
+                    <label class="form-label">Imagen</label>
+                    <!-- <input type="text" class="form-control" formControlName="imagen"> -->
+
+                    <input type="file" accept="image/*" class="form-control" formControlName="imagen">
+
+                </div>
+
+
+                <div class="col-12 col-md-3">
+                    <label class="form-label">Categoria</label>
+                    <input type="text" class="form-control" formControlName="categoria">
+
+                    <p class="error" *ngIf="checkError('categoria','maxlength')">
+                        Es mas de 15 caracteres
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div class="button" style="text-align: center;">
+                <button type="submit" value="Enviar" class="btn btn-success"
+                    [disabled]="!formulario.valid">Enviar</button>
+            </div>
+
+
+        </form>
+    </div>
+
+</section>
+
+<p>{{formulario.valid}}</p>
