@@ -69,7 +69,7 @@
                     <label class="form-label">Imagen</label>
                     <!-- <input type="text" class="form-control" formControlName="imagen"> -->
 
-                    <input type="file" accept="image/*" class="form-control" formControlName="imagen">
+                    <input type="text" class="form-control" formControlName="imagen">
 
                 </div>
 
@@ -88,8 +88,8 @@
             </div>
 
             <div class="button" style="text-align: center;">
-                <button type="submit" value="Enviar" class="btn btn-success"
-                    [disabled]="!formulario.valid">Enviar</button>
+                <input type="submit" value="Enviar" class="btn btn-success"
+                    [disabled]="!formulario.valid">
             </div>
 
 
@@ -97,5 +97,5 @@
     </div>
 
 </section>
-
-<p>{{formulario.valid}}</p>
+<!-- 
+<p>{{formulario.valid}}</p> -->

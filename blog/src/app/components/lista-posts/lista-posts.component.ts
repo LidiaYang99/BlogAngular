@@ -26,6 +26,7 @@ export class ListaPostsComponent {
   }
 
   ngOnInit() {
+    
     this.arrPosts = this.postService.getAll()
     console.log(this.arrPosts);
 

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Post } from '../interface/post.interfaces';
 
 import { StorageService } from 'src/app/services/storage.service';
@@ -11,6 +11,8 @@ export class PostService {
 
   private arrPost: Post[];
   private arrCategoria: string[]
+
+  storageService = inject(StorageService)
 
 
   constructor(private localStorageService: StorageService) {
@@ -36,7 +38,17 @@ export class PostService {
   }
 
   getAll() {
-    return this.arrPost
+
+    if (this.storageService.getItem('datoGuardado')) {
+
+      this.arrPost.push(this.storageService.getItem('datoGuardado'))
+      return this.arrPost
+
+    } else {
+      return this.arrPost
+    }
+
+
   }
 
   getCategoria() {
@@ -58,11 +70,12 @@ export class PostService {
     return this.arrPost.filter(item => item.categoria.toLowerCase() === pCate)
   }
 
+
   creat(pPost: Post) {
     this.arrPost.push(pPost);
     console.log(this.arrPost);
   }
 
 
- 
+
 }

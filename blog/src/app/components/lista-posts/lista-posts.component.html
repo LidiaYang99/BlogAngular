@@ -29,12 +29,12 @@
 
         <div class="posts mt-3">
             <div class="post row p-3 mb-3" *ngFor="let post of arrPosts">
-                <h3 class="col-12">{{post.titulo}}</h3>
-                <p class="col-8">{{post.contenido}}</p>
-                <img [src]="post.imagen" alt="" class="col-4">
-                <p class="col-2">Autor: {{post.autor}}</p>
-                <p class="col-4">Fecha de publicación: {{post.fecha}}</p>
-                <p class="col-4">Categoria: {{post.categoria}}</p>
+                <h3 class="col-12 col-md-12">{{post.titulo}}</h3>
+                <p class="col-12 col-md-8">{{post.contenido}}</p>
+                <img [src]="post.imagen" alt="" class="col-12 col-md-4">
+                <p class="col-12 col-md-2">Autor: {{post.autor}}</p>
+                <p class="col-12 col-md-4">Fecha de publicación: {{post.fecha}}</p>
+                <p class="col-12 col-md-4">Categoria: {{post.categoria}}</p>
             </div>
 
         </div>
