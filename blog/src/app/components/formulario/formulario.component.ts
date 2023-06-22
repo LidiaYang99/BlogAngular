@@ -80,7 +80,7 @@ export class FormularioComponent {
 
     this.newPost = this.formulario.value
     this.postServicio.creat(this.newPost);
-
+  
     const dato = this.newPost;
     this.localStorageService.setItem('datoGuardado', dato);
     

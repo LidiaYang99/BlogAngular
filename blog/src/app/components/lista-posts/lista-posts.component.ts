@@ -16,17 +16,29 @@ export class ListaPostsComponent {
   arrPosts: Post[]
   arrCate: String[] | undefined
 
+  newPost: Post
+
   timer: any | undefined
 
   constructor() {
     this.arrPosts = []
     this.arrCate = this.postService.getCategoria()
 
+    this.newPost = {
+      titulo: '',
+      contenido: '',
+      autor: '',
+      imagen: '',
+      fecha: '',
+      categoria: '',
+    }
+
+
     this.timer = new Date();
   }
 
   ngOnInit() {
-    
+
     this.arrPosts = this.postService.getAll()
     console.log(this.arrPosts);
 

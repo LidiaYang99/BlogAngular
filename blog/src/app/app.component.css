@@ -1,3 +1,5 @@
-router-outlet{
-    background-color: pink;
+section {
+    width: 100%;
+    min-height: 100vh;
+    background: url(/assets/image/bg_new.jpg);
 }
