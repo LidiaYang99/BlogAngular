@@ -1,0 +1,40 @@
+
+.container {
+    color: aliceblue;
+    font-size: 22px;
+}
+
+.banner {
+    height: 15vh;
+    width: 100%;
+    color: white;
+}
+
+.banner p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+}
+
+.banner .time {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    height: 40px;
+    width: 350px;
+}
+
+
+.post{
+    background-color: white;
+    opacity: .8;
+    color:darkblue;
+}
+
+.post img{
+    display: block;
+    width: 300px;
+}
+

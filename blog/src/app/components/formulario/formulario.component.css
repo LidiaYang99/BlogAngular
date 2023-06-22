@@ -1,0 +1,42 @@
+
+.container {
+    opacity: 0.8;
+    color: aliceblue;
+    font-size: 22px;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    height: 40px;
+    line-height: 20px;
+    width: 250px;
+    padding: 8px;
+    text-align: center;
+}
+
+ul i {
+    color: aliceblue;
+    width: 20px;
+    height: 20px;
+}
+
+.container textarea {
+    resize: none;
+}
+
+.container .time {
+    text-align: right;
+}
+
+.error {
+    color: hotpink;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid hotpink;
+}
+
+textarea.ng-invalid.ng-touched {
+    border: 2px solid hotpink;
+}
