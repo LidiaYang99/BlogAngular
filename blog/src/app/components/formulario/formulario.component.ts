@@ -82,7 +82,7 @@ export class FormularioComponent {
     this.postServicio.creat(this.newPost);
   
     const dato = this.newPost;
-    this.localStorageService.setItem('datoGuardado', dato);
+    // this.localStorageService.setItem('datoGuardado', dato);
     
     this.router.navigate(['/posts']);
   }
