@@ -41,7 +41,7 @@ export class PostService {
 
     if (this.storageService.getItem('datoGuardado')) {
 
-      this.arrPost.push(this.storageService.getItem('datoGuardado'))
+      this.arrPost = this.storageService.getItem('datoGuardado')
       return this.arrPost
 
     } else {
@@ -75,6 +75,8 @@ export class PostService {
   creat(pPost: Post) {
     this.arrPost.push(pPost);
     console.log(this.arrPost);
+
+    this.storageService.setItem('datoGuardado', this.arrPost)
   }
 
 
